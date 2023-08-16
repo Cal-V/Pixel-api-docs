@@ -1,0 +1,39 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  height: 100vh;
+}
+
+.router-page {
+  padding-left: 20px;
+}
+
+pre {
+  border: grey 3px solid;
+  background-color: black;
+  color: bisque;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+}
+
+.list {
+  width: 200px;
+  border-right: 3px black solid;
+}
+
+table {
+  text-align: left;
+}
+
+td, th {
+  padding: 5px;
+}
+
+td {
+  border: 1px black solid;
+}
+
+th {
+  border: 3px black solid;
+}
