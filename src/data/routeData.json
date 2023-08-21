@@ -19,8 +19,8 @@
                 ],
                 "rows":[
                     {"data":["pallet","string",true,"The name of the pallet to be used for the pixel art !!May be changed to use ids instead"]},
-                    {"data":["size","object",true,"contains [width] and [height] properties, two positive numbers !!May be changed to single [width] property"]},
-                    {"data":["pixels","string",true,"The string is in base36 with all capital letters"]}
+                    {"data":["size","object",true,"contains [width] and [height] properties, two positive numbers !!May be changed to single [width] property. Max width is 150"]},
+                    {"data":["pixels","string",true,"The string is in base36 with all capital letters. Max length of string is 20000"]}
                 ]
             }
         },
