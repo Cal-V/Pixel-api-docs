@@ -8,10 +8,10 @@ function RoutePage({data}) {
             <div className='router-page'>
                 <h1>{data.title}</h1>
                 <h2>{data.path} - {data.method}</h2>
-                <h4>Input</h4>
-                <pre>{JSON.stringify(data.input_example,"\n","    ")}</pre>
-                <h4>Output</h4>
-                <pre>{data.output_example}</pre>
+                {data.input_example ? <div><h4>Input</h4>
+                <pre>{JSON.stringify(data.input_example,"\n","    ")}</pre></div> : <></>}
+                {data.output_example ? <div><h4>Output</h4>
+                <pre>{JSON.stringify(data.output_example,"\n","    ")}</pre></div> : <></>}
                 <Table data={data.input_properties_table} />
             </div>
         )

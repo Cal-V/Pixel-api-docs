@@ -14,7 +14,8 @@ pre {
   color: bisque;
   border-radius: 10px;
   padding: 20px;
-  width: 80%;
+  width: 1000px;
+  overflow: scroll;
 }
 
 .list {
@@ -24,6 +25,7 @@ pre {
 
 table {
   text-align: left;
+  width: 1050px;
 }
 
 td, th {

@@ -15,12 +15,12 @@
             "output_example":"TBD",
             "input_properties_table":{
                 "headers":[
-                    "name","format","required","notes"
+                    "name","type","format","required","notes"
                 ],
                 "rows":[
-                    {"data":["pallet","string",true,"The name of the pallet to be used for the pixel art !!May be changed to use ids instead"]},
-                    {"data":["size","object",true,"contains [width] and [height] properties, two positive numbers !!May be changed to single [width] property. Max width is 150"]},
-                    {"data":["pixels","string",true,"The string is in base36 with all capital letters. Max length of string is 20000"]}
+                    {"data":["pallet","body","string",true,"The name of the pallet to be used for the pixel art !!May be changed to use ids instead"]},
+                    {"data":["size","body","object",true,"contains [width] and [height] properties, two positive numbers !!May be changed to single [width] property. Max width is 150"]},
+                    {"data":["pixels","body","string",true,"The string is in base36 with all capital letters. Max length of string is 20000"]}
                 ]
             }
         },
@@ -35,11 +35,39 @@
             "output_example":"TBD",
             "input_properties_table":{
                 "headers":[
-                    "name","format","required","notes"
+                    "name","type","format","required","notes"
                 ],
                 "rows":[
-                    {"data":["pattern","string",true,"The readable crochet pattern made from the pixels"]},
-                    {"data":["format","string",true,"The type of pattern used (c2c,sc-right-to-left,sc-bottom-to-top, etc)"]}
+                    {"data":["pattern","body","string",true,"The readable crochet pattern made from the pixels"]},
+                    {"data":["format","body","string",true,"The type of pattern used (c2c,sc-right-to-left,sc-bottom-to-top, etc)"]}
+                ]
+            }
+        },
+        {
+            "path":"/delete/canvas/[id]",
+            "title":"Delete Canvas",
+            "method":"DELETE",
+            "output_example":"TBD",
+            "input_properties_table":{
+                "headers":[
+                    "name","type","format","required","notes"
+                ],
+                "rows":[
+                    {"data":["id","body","string - uuid",true,"The uuid reference for the canvas in the database"]}
+                ]
+            }
+        },
+        {
+            "path":"/delete/pattern/[id]",
+            "title":"Delete Pattern",
+            "method":"DELETE",
+            "output_example":"TBD",
+            "input_properties_table":{
+                "headers":[
+                    "name","type","format","required","notes"
+                ],
+                "rows":[
+                    {"data":["id","body","string - uuid",true,"The uuid reference for the pattern in the database"]}
                 ]
             }
         }
