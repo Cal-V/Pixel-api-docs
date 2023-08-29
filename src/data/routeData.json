@@ -5,6 +5,7 @@
             "title":"Save Canvas",
             "method":"POST",
             "input_example": {
+                "name": "Canvas Name",
                 "pallet": "rainbow",
                 "size": {
                     "width": 12,
@@ -14,6 +15,7 @@
             },
             "output_example": {
                 "_id": "5b3b3b3b3b3b3b3b3b3b3b3b",
+                "name": "Canvas Name",
                 "pallet": "rainbow",
                 "size": {
                     "width": 12,
@@ -41,11 +43,14 @@
             "title":"Save Pattern",
             "method":"POST",
             "input_example": {
+                "name": "Pattern Name",
                 "pattern":"1: inc 1 block of A inc (1)\n2: inc 2 blocks of A inc (2)\n3: inc 1 blocks of A, 1 blocks of B, 1 block of A inc (3)\n4: inc 1 blocks of A, 2 blocks of B, 1 block of A inc (4)\n5: dec 3 blocks of A dec (3)\n6: dec 2 blocks of A dec (2)\n7: dec 1 block of A dec (1)",
                 "format":"c2c",
                 "canvasID": "5b3b3b3b3b3b3b3b3b3b3b3b"
             },
             "output_example": {
+                "_id": "5b3b3b3b3b3b3b3b3b3b3b3b",
+                "name": "Pattern Name",
                 "pattern":"1: inc 1 block of A inc (1)\n2: inc 2 blocks of A inc (2)\n3: inc 1 blocks of A, 1 blocks of B, 1 block of A inc (3)\n4: inc 1 blocks of A, 2 blocks of B, 1 block of A inc (4)\n5: dec 3 blocks of A dec (3)\n6: dec 2 blocks of A dec (2)\n7: dec 1 block of A dec (1)",
                 "format":"c2c",
                 "canvasID": "5b3b3b3b3b3b3b3b3b3b3b3b",
@@ -97,6 +102,7 @@
             "title":"Get Pattern",
             "method":"GET",
             "output_example":{
+                "name": "Pattern Name",
                 "pattern":"1: inc 1 block of A inc (1)\n2: inc 2 blocks of A inc (2)\n3: inc 1 blocks of A, 1 blocks of B, 1 block of A inc (3)\n4: inc 1 blocks of A, 2 blocks of B, 1 block of A inc (4)\n5: dec 3 blocks of A dec (3)\n6: dec 2 blocks of A dec (2)\n7: dec 1 block of A dec (1)",
                 "format":"c2c",
                 "created": {
@@ -118,6 +124,7 @@
             "title":"Get Canvas",
             "method":"GET",
             "output_example":{
+                "name": "Canvas Name",
                 "pallet": "rainbow",
                 "size": {
                     "width": 12,
@@ -144,6 +151,7 @@
             "method":"GET",
             "output_example":{"canvases":[
                 {
+                    "name": "Canvas Name",
                     "pallet": "rainbow",
                     "size": {
                         "width": 12,
@@ -155,6 +163,7 @@
                         "default": "Date.now"
                     }
                 },{
+                    "name": "Canvas Name",
                     "pallet": "rainbow",
                     "size": {
                         "width": 4,
@@ -181,6 +190,7 @@
             "method":"GET",
             "output_example":{"patterns":[
                 {
+                    "name":"Pattern Name",
                     "pattern":"1: inc 1 block of A inc (1)\n2: inc 2 blocks of A inc (2)\n3: inc 1 blocks of A, 1 blocks of B, 1 block of A inc (3)\n4: inc 1 blocks of A, 2 blocks of B, 1 block of A inc (4)\n5: dec 3 blocks of A dec (3)\n6: dec 2 blocks of A dec (2)\n7: dec 1 block of A dec (1)",
                     "format":"c2c"
                 },{
