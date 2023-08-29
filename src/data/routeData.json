@@ -1,7 +1,7 @@
 {
     "routes": [
         {
-            "path":"/save/canvas",
+            "path":"/c/create",
             "title":"Save Canvas",
             "method":"POST",
             "input_example": {
@@ -12,7 +12,19 @@
                 },
                 "pixels": "CDEFGHIJKLMN"
             },
-            "output_example":"TBD",
+            "output_example": {
+                "_id": "5b3b3b3b3b3b3b3b3b3b3b3b",
+                "pallet": "rainbow",
+                "size": {
+                    "width": 12,
+                    "height": 1
+                },
+                "pixels": "CDEFGHIJKLMN",
+                "created": {
+                    "type": "Date",
+                    "default": "Date.now"
+                }
+            },
             "input_properties_table":{
                 "headers":[
                     "name","type","format","required","notes"
@@ -25,14 +37,23 @@
             }
         },
         {
-            "path":"/save/pattern",
+            "path":"/p/create",
             "title":"Save Pattern",
             "method":"POST",
             "input_example": {
                 "pattern":"1: inc 1 block of A inc (1)\n2: inc 2 blocks of A inc (2)\n3: inc 1 blocks of A, 1 blocks of B, 1 block of A inc (3)\n4: inc 1 blocks of A, 2 blocks of B, 1 block of A inc (4)\n5: dec 3 blocks of A dec (3)\n6: dec 2 blocks of A dec (2)\n7: dec 1 block of A dec (1)",
-                "format":"c2c"
+                "format":"c2c",
+                "canvasID": "5b3b3b3b3b3b3b3b3b3b3b3b"
             },
-            "output_example":"TBD",
+            "output_example": {
+                "pattern":"1: inc 1 block of A inc (1)\n2: inc 2 blocks of A inc (2)\n3: inc 1 blocks of A, 1 blocks of B, 1 block of A inc (3)\n4: inc 1 blocks of A, 2 blocks of B, 1 block of A inc (4)\n5: dec 3 blocks of A dec (3)\n6: dec 2 blocks of A dec (2)\n7: dec 1 block of A dec (1)",
+                "format":"c2c",
+                "canvasID": "5b3b3b3b3b3b3b3b3b3b3b3b",
+                "created": {
+                    "type": "Date",
+                    "default": "Date.now"
+                }
+            },
             "input_properties_table":{
                 "headers":[
                     "name","type","format","required","notes"
@@ -44,10 +65,10 @@
             }
         },
         {
-            "path":"/delete/canvas/[id]",
+            "path":"/c/delete/[id]",
             "title":"Delete Canvas",
             "method":"DELETE",
-            "output_example":"TBD",
+            "output_example":"Successfully Deleted",
             "input_properties_table":{
                 "headers":[
                     "name","type","format","required","notes"
@@ -58,10 +79,10 @@
             }
         },
         {
-            "path":"/delete/pattern/[id]",
+            "path":"/p/delete/[id]",
             "title":"Delete Pattern",
             "method":"DELETE",
-            "output_example":"TBD",
+            "output_example":"Successfully Deleted",
             "input_properties_table":{
                 "headers":[
                     "name","type","format","required","notes"
@@ -72,12 +93,16 @@
             }
         },
         {
-            "path":"/pattern/[id]",
+            "path":"/p/[id]",
             "title":"Get Pattern",
             "method":"GET",
             "output_example":{
                 "pattern":"1: inc 1 block of A inc (1)\n2: inc 2 blocks of A inc (2)\n3: inc 1 blocks of A, 1 blocks of B, 1 block of A inc (3)\n4: inc 1 blocks of A, 2 blocks of B, 1 block of A inc (4)\n5: dec 3 blocks of A dec (3)\n6: dec 2 blocks of A dec (2)\n7: dec 1 block of A dec (1)",
-                "format":"c2c"
+                "format":"c2c",
+                "created": {
+                    "type": "Date",
+                    "default": "Date.now"
+                }
             },
             "input_properties_table":{
                 "headers":[
@@ -89,7 +114,7 @@
             }
         },
         {
-            "path":"/canvas/[id]",
+            "path":"/c/[id]",
             "title":"Get Canvas",
             "method":"GET",
             "output_example":{
@@ -98,7 +123,11 @@
                     "width": 12,
                     "height": 1
                 },
-                "pixels": "CDEFGHIJKLMN"
+                "pixels": "CDEFGHIJKLMN",
+                "created": {
+                    "type": "Date",
+                    "default": "Date.now"
+                }
             },
             "input_properties_table":{
                 "headers":[
@@ -110,7 +139,7 @@
             }
         },
         {
-            "path":"/user/[userId]/canvases",
+            "path":"/c/user/[userId]",
             "title":"Get User Canvases",
             "method":"GET",
             "output_example":{"canvases":[
@@ -120,14 +149,22 @@
                         "width": 12,
                         "height": 1
                     },
-                    "pixels": "CDEFGHIJKLMN"
+                    "pixels": "CDEFGHIJKLMN",
+                    "created": {
+                        "type": "Date",
+                        "default": "Date.now"
+                    }
                 },{
                     "pallet": "rainbow",
                     "size": {
                         "width": 4,
                         "height": 3
                     },
-                    "pixels": "CDEFGHIJKLMN"
+                    "pixels": "CDEFGHIJKLMN",
+                    "created": {
+                        "type": "Date",
+                        "default": "Date.now"
+                    }
                 }
             ]},
             "input_properties_table":{
@@ -139,7 +176,7 @@
                 ]
             }
         },{
-            "path":"/user/[userId]/patterns",
+            "path":"/p/user/[userId]",
             "title":"Get User Patterns",
             "method":"GET",
             "output_example":{"patterns":[
